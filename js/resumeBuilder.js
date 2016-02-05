@@ -28,11 +28,37 @@ work.years = "2009 - Present";
 work.city = "Palatine, IL";
 
 
-var education = {};
+var education = {
+	"schools":[
+		{
+			"name":"Colorado State University",
+			"city":"Fort Collins",
+			"state": "CO",
+			"years": "1989-1993",
+			"major": "English",
+			"minor": "",
+			"online": ""
+		},
+		{
+			"name":"Udacity",
+			"city":"Online",
+			"state": "",
+			"years": "2015-Present",
+			"major": "",
+			"minor": "",
+			"online":["Intro To Computer Science", "Front-End Developer Nano Degree"]
+		
+		}
+
+	]
+
+};
 
 education["name"] = "Colorado State University";
 education["years"] = "1989 - 1993";
 education["city"] = "Fort Collins, CO";
+
+
 
 
  //Format Header - Name & title
@@ -69,10 +95,10 @@ $("#header").append(HTMLskillsStart);
 
 //Format & Append Work History
 //$("workExperience").append(HTMLworkStart);
-$("body").append(work.position);
+$("#main").append(work.position);
 
 //Format & Append Education History
-$("body").append(education.name);
+$("#main").append(education.schools[1].name);
 
 
  
