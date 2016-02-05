@@ -20,19 +20,31 @@ var bio = {
 				"Python"]
 };
 
+var work = {};
+
+work.position = "Grand Wizard";
+work.employer = "Me inc";
+work.years = "2009 - Present";
+work.city = "Palatine, IL";
+
+
+var education = {};
+
+education["name"] = "Colorado State University";
+education["years"] = "1989 - 1993";
+education["city"] = "Fort Collins, CO";
+
 
  //Format Header - Name & title
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role); 
 
-var formattedPicture = HTMLbioPic.replace("%data%", bio.picture);
-var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
+
 //var formattedSkills = HTMLskills.replace
 
 
-$("#header").prepend(HTMLskillsStart);
-$("#header").prepend(formattedMessage);
-$("#header").prepend(formattedPicture);
+
+
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
@@ -44,6 +56,24 @@ var formattedContact = HTMLcontactGeneric.replace("%contact%", "Mobile");
 formattedContact = formattedContact.replace("%data%", bio.contact.mobile);
 
 $("#topContacts").append(formattedContact);
+
+
+var formattedPicture = HTMLbioPic.replace("%data%", bio.picture);
+var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
+
+$("#header").append(formattedPicture);
+$("#header").append(formattedMessage);
+
+$("#header").append(HTMLskillsStart);
+
+
+//Format & Append Work History
+//$("workExperience").append(HTMLworkStart);
+$("body").append(work.position);
+
+//Format & Append Education History
+$("body").append(education.name);
+
 
  
 //Format & Append Footer Contacts
