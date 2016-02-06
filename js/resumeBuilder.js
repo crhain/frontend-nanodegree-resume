@@ -17,10 +17,14 @@ var bio = {
 				},
 	"picture": "https://scontent.ford1-1.fna.fbcdn.net/hprofile-prn2/v/t1.0-1/p160x160/555095_10201237456002684_1558476731_n.jpg?oh=95105c9f4374904ef31c24b075b3cd7d&oe=57361B26",
 	"message": "Hello World!",
-	"skills": ["HTML/CSS", 
+	"skills":[
+				"HTML/CSS", 
 				"JavaScript", 
 				"Python"]
 };
+
+
+
 
 
 var work = {
@@ -93,6 +97,18 @@ var education = {
  	]
  };
 
+
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+
+}
 
 /*
 $("body").append(education.school[0].name);
