@@ -28,15 +28,15 @@ var work = {
 		[
 			{
 				"name":"Me Inc",
-				"position": "Grand Wizard",
-				"date": 2016 ,
-				"city": "Palatine, IL"
+				"title": "Grand Wizard",
+				"dates": "2009 - Present",
+				"description": "Various projects and activities."
 			},
 			{
 				"name":"Zurich Insurance",
-				"position": "Marketing Research Analyst",
-				"date": 2009 ,
-				"city": "Schaumburg, IL"
+				"title": "Marketing Research Analyst",
+				"dates": "1998-2009",
+				"description": "Insurance and marketing research type stuff."
 			}
 		]
 
@@ -47,9 +47,8 @@ var projects = {
 	[
 		{
 			"name": "Interactive Resume",
-			"description": "An interactive resume written in javascript.",
-			"github": "crhain",
-			"web": "None",
+			"description": "An interactive resume written in javaScript.",
+			"url": "crhain",
 			"date": 2016
 		}
 
@@ -66,7 +65,7 @@ var education = {
  			"date": 1998,
  			"degree": "MS",
  			"major": "Library & Information Science",
- 			"minor": "None"
+ 			"url": ""
  		},
  		{
  			"name": "Colorado State University",
@@ -74,7 +73,7 @@ var education = {
  			"date": 1993,
  			"degree": "BA",
  			"major": "English",
- 			"minor": "None"
+ 			"url": ""
  		}
  	],
  	"online": 
@@ -82,12 +81,14 @@ var education = {
  		{
  			"name": "Udacity",
  			"class": "Intro to Computer Science",
- 			"years": 2015
+ 			"years": 2015,
+ 			"url": ""
  		},
  		{
  			"name": "Udacity",
  			"class": "Front-End Developer Nano Degree",
- 			"years": 2016
+ 			"years": 2016,
+ 			"url": ""
  		}
  	]
  };
