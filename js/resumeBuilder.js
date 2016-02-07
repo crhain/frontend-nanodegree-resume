@@ -110,6 +110,17 @@ if (bio.skills.length > 0) {
 
 }
 
+//Lesson 3 For loops
+
+
+for(var i = 0; i < work.employer.length; i++){
+
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.employer[i].name);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.employer[i].title);
+	$(".work-entry:last").append(formattedEmployer + formattedTitle);
+}
+
 /*
 $("body").append(education.school[0].name);
 $("body").append("<br>" + education.online[1].name);
