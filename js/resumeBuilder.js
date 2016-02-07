@@ -7,13 +7,13 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio = {
 	"name": "Carl Hain",
 	"role": "Web Developer",
-	"contact": {
+	"contacts": {
 		"mobile": "1-866-333-5695",
 		"email":"crhain@gmail.com",
 		"twitter": "None",
 		"github": "https://github.com/crhain",
 		"blog": "None",
-		"location": "Chicago, IL"
+		"location": "Palatine, IL"
 				},
 	"picture": "https://scontent.ford1-1.fna.fbcdn.net/hprofile-prn2/v/t1.0-1/p160x160/555095_10201237456002684_1558476731_n.jpg?oh=95105c9f4374904ef31c24b075b3cd7d&oe=57361B26",
 	"message": "Hello World!",
@@ -25,7 +25,7 @@ var bio = {
 
 
 var work = {
-		"employer":
+		"jobs":
 		[
 			{
 				"name":"Me Inc",
@@ -84,11 +84,11 @@ projects.display = function() {
 
 
 var education = {
- 	"school": 
+ 	"schools": 
  	[
  		{
  			"name": "Dominican University",
- 			"city": "River Forest, IL",
+ 			"location": "River Forest, IL",
  			"date": 1998,
  			"degree": "MS",
  			"major": "Library & Information Science",
@@ -96,7 +96,7 @@ var education = {
  		},
  		{
  			"name": "Colorado State University",
- 			"city": "Fort Collins, CO",
+ 			"location": "Fort Collins, CO",
  			"date": 1993,
  			"degree": "BA",
  			"major": "English",
@@ -136,14 +136,15 @@ if (bio.skills.length > 0) {
 //Lesson 3 For loops
 
 var displayWork = function() {
-	for(var i = 0; i < work.employer.length; i++){
+	for(var i = 0; i < work.jobs.length; i++){
 		$("#workExperience").append(HTMLworkStart);
-		var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.employer[i].name);
-		var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.employer[i].title);
+		var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].name);
+		var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
 		$(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
+		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[i].location))
 
-		var formattedWorkDates =  HTMLworkDates.replace("%data%", work.employer[i].dates);
-		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.employer[i].description);
+		var formattedWorkDates =  HTMLworkDates.replace("%data%", work.jobs[i].dates);
+		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
 
 		$(".work-entry:last").append(formattedWorkDates);
 		$(".work-entry:last").append(formattedWorkDescription);
@@ -179,6 +180,7 @@ $(document).click(function(loc){
 });
 
 
+$("#mapDiv").append(googleMap);
 
 /*
 $("body").append(education.school[0].name);
