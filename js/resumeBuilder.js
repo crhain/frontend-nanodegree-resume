@@ -24,9 +24,6 @@ var bio = {
 };
 
 
-
-
-
 var work = {
 		"employer":
 		[
@@ -52,15 +49,39 @@ var projects = {
 	"projects":
 	[
 		{
-			"name": "Interactive Resume",
+			"title": "Portfolio Page",
+			"dates": "2016",
+			"description": "A purty lookin' 'folio page made with some of that html and css stuff. Could use some more work though.",
+			"image": ""
+		},
+		{
+			"title": "Interactive Resume",
+			"dates": "2016",
 			"description": "An interactive resume written in javaScript.",
-			"url": "crhain",
-			"date": 2016
+			"image": ""
+			
 		}
 
 	]
 
 }; 
+
+
+projects.display = function() {
+
+	for(var i=0; i < projects.projects.length; i++) {
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
+		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
+		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", 
+			projects.projects[i].description));	
+		if(projects.projects[i].image.length > 0) {
+			$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].image));
+		}
+	}
+	
+}
+
 
 var education = {
  	"school": 
@@ -150,7 +171,7 @@ console.log(inName("sebastian thrun") === "Sebastian THRUN");
 //Display some stuff
 displayWork();
 
-
+projects.display(projects);
 
 
 $(document).click(function(loc){
