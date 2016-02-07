@@ -130,7 +130,28 @@ var displayWork = function() {
 	}
 }
 
+
+//Add internationlizer function
+var inName = function (fullName) {
+
+	var nameArray = fullName.toLowerCase().split(" ");
+	var newName = nameArray[0][0].toUpperCase() + nameArray[0].slice(1);
+	newName += " " + nameArray[1].toUpperCase();
+
+	return newName;
+}
+
+//Append internationalizer button
+$("#main").append(internationalizeButton);
+
+//internationalizer test
+console.log(inName("sebastian thrun") === "Sebastian THRUN");
+
+//Display some stuff
 displayWork();
+
+
+
 
 $(document).click(function(loc){
 	logClicks(loc.pageX, loc.pageY);
