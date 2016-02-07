@@ -34,12 +34,14 @@ var work = {
 				"name":"Me Inc",
 				"title": "Grand Wizard",
 				"dates": "2009 - Present",
+				"location": "Palatine, IL",
 				"description": "Various projects and activities."
 			},
 			{
 				"name":"Zurich Insurance",
 				"title": "Marketing Research Analyst",
 				"dates": "1998-2009",
+				"location": "Schaumburg, IL",
 				"description": "Insurance and marketing research type stuff."
 			}
 		]
@@ -112,20 +114,29 @@ if (bio.skills.length > 0) {
 
 //Lesson 3 For loops
 
+var displayWork = function() {
+	for(var i = 0; i < work.employer.length; i++){
+		$("#workExperience").append(HTMLworkStart);
+		var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.employer[i].name);
+		var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.employer[i].title);
+		$(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
 
-for(var i = 0; i < work.employer.length; i++){
-	$("#workExperience").append(HTMLworkStart);
-	var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.employer[i].name);
-	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.employer[i].title);
-	$(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
+		var formattedWorkDates =  HTMLworkDates.replace("%data%", work.employer[i].dates);
+		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.employer[i].description);
 
-	var formattedWorkDates =  HTMLworkDates.replace("%data%", work.employer[i].dates);
-	var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.employer[i].description);
+		$(".work-entry:last").append(formattedWorkDates);
+		$(".work-entry:last").append(formattedWorkDescription);
 
-	$(".work-entry:last").append(formattedWorkDates);
-	$(".work-entry:last").append(formattedWorkDescription);
-
+	}
 }
+
+displayWork();
+
+$(document).click(function(loc){
+	logClicks(loc.pageX, loc.pageY);
+});
+
+
 
 /*
 $("body").append(education.school[0].name);
