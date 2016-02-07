@@ -132,13 +132,13 @@ var displayWork = function() {
 
 
 //Add internationlizer function
-var inName = function (fullName) {
+var inName = function (name) {
+	name = name.trim().split(" ");
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() +
+		name[0].slice(1).toLowerCase();
 
-	var nameArray = fullName.toLowerCase().split(" ");
-	var newName = nameArray[0][0].toUpperCase() + nameArray[0].slice(1);
-	newName += " " + nameArray[1].toUpperCase();
-
-	return newName;
+	return name[0] + " " + name[1];	
 }
 
 //Append internationalizer button
