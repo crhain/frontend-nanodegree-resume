@@ -131,7 +131,14 @@ var projects = {
 			"dates": "January 2016",
 			"description": "A portfolio website using HTML5 and CSS",
 			"url": "",
-			"images": []
+			"images": ["http://placehold.it/350x150"]
+		},
+		{
+			"title": "Interactive Resume",
+			"dates": "February 2016",
+			"description": "A resume that adds data using JavaScript.  Includes an interactive map!",
+			"url": "",
+			"images": ["http://placehold.it/350x150"]
 		}
 	]
 };
@@ -151,7 +158,7 @@ projects.display = function(){
 		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
 		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
 
-		if(projects.projects.images) {
+		if(projects.projects[i].images) {
 			for(var image = 0; image < projects.projects[i].images.length; image++) {
 				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[image]));		
 			}	
